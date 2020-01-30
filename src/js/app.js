@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "bubble": {
           "distance": 200,
-          "size": 3,
+          "size": 3.25,
           "duration": 2,
           "opacity": 8,
           "speed": 3
