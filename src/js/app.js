@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "type": "circle",
         "stroke": {
           "width": 2,
-          "color": "#d0a6d9"
+          "color": "#ffffff"
         },
         "polygon": {
           "nb_sides": 5
@@ -93,11 +93,11 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         },
         "bubble": {
-          "distance": 200,
-          "size": 3.25,
+          "distance": 300,
+          "size": 3.4,
           "duration": 2,
           "opacity": 8,
-          "speed": 3
+          "speed": 1
         },
         "repulse": {
           "distance": 200,
