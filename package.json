@@ -9,6 +9,7 @@
   "author": "Mauricio Urraco <mauriurraco@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "aos": "^2.3.4",
     "bootstrap": "^4.4.1",
     "bootstrap-scss": "^4.4.1",
     "browser-sync": "^2.18.6",
