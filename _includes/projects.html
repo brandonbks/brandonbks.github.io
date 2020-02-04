@@ -3,10 +3,38 @@
 </div>
 <div class="user-projects" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
   <div class="images-right" id="jnFiles"> 
-    <video width="475" height="300" controls autoplay loop>
-      <source src="{{ "/images/jnFiles.mp4" | prepend: site.baseurl }}" type="video/mp4">
-    Your browser does not support the video tag.
-    </video>
+    <table class="table table-hover">
+      <thead>
+        <tr class="table-active">
+          <th scope="col">Notebooks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">
+            <a href="{{ "/images/sn1.html" | prepend: site.baseurl }}">Simple Linear Regression: Introduction</a>
+          </th>
+        </tr>
+
+        <tr>
+          <th scope="row">
+            <a href="{{ "/images/sn2.html" | prepend: site.baseurl }}">Simple Linear Regression: Confidence & Prediction Intervals</a>
+          </th>
+        </tr>
+
+        <tr>
+          <th scope="row">
+            <a href="{{ "/images/sn3.html" | prepend: site.baseurl }}">Simple Linear Regression: Error Assumptions & Derivation</a>
+          </th>
+        </tr>
+
+        <tr>
+          <th scope="row">
+            <a href="{{ "/images/sn4.html" | prepend: site.baseurl }}">Multiple Linear Regression: Derivation & Optimization</a>
+          </th>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <div class="contents">
     <h3> Course Material for ISyE 4031: Regression/Forecasting </h3>
@@ -44,7 +72,7 @@
 
 <div class="user-projects" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="500">
   <div class="contents-left">
-      <video width="720" height="400" controls autoplay loop>
+      <video width="720" height="400" controls loop>
         <source src="{{ "/images/webAppEdited.mp4" | prepend: site.baseurl }}" type="video/mp4">
       Your browser does not support the video tag.
       </video>
