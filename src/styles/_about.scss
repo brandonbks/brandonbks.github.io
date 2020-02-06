@@ -11,6 +11,29 @@
   margin: 10px;
 }
 
+.info{
+  @media only screen and (min-width: $cut) {
+    float: left;
+    margin-top: -5%;
+    width: 48%;
+  }
+}
+
+
+.selfPhoto{
+  @media only screen and (min-width: $cut) {
+    float: right;
+    margin-top: -5%;
+    width: 48%;
+  }
+}
+
+#self{
+  width: 100%;
+  position: relative;
+  top: 120px;
+}
+
 .user {
   text-align: center;
   font-size: 60px;
@@ -30,4 +53,8 @@
 .user-details {
   text-align: center;
   margin: 5px auto;
+}
+
+h1{
+  font-size:50px;
 }
