@@ -67,6 +67,10 @@
       var treeData = {
         "name": "Software Notes",
         "children": [
+          {"name": "ML Concepts", 
+           "children": [
+             {"name": "Fundamental Concepts", "url": "{{ "/static/concepts.pdf" | prepend: site.baseurl }}"},
+           ]},
           {"name": "Regression",
            "children": [
              {"name": "Simple Linear Regression", "url": "{{ "/static/sn1.html" | prepend: site.baseurl }}"},
@@ -80,9 +84,10 @@
              {"name": "WIP"}
           ]}
         ]
-      } 
+      }
+       
       var nonChild = ["Software Notes", "Regression",
-                      "Forecasting", "WIP"]
+                      "Forecasting", "WIP", "ML Concepts"]
       // Set the dimensions and margins of the diagram
           var margin = {top: 20, right: 90, bottom: 0, left: 155},
               width = 960 - margin.left - margin.right,
