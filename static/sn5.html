@@ -16382,7 +16382,7 @@ brandonkang@gatech.edu</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>NOTE</strong> StatsModels and Sci-Kit Learn both do <em>NOT</em> support stepwise, backwards, or best subsets regression, which are required for the course. In order to perform these methods, you would have to implement your own function to accomplish these tasks. Therefore, for the purpose of your projects/homeworks, please use an alternative software (R/Minitab/JMP) in order to perform the required screening techniques. There are some code lurking out there that does implement these screening techniques in Python, but these software notes will be going into some alternative methods that you can perform to screen for features. Use these software notes as supplementary material for your project and your future data science project endeavors.</p>
+<p><strong>NOTE</strong> StatsModels and Sci-Kit Learn both do <em>NOT</em> support stepwise, backwards, or best subsets regression, which are required for the course. In order to perform these methods, you would have to implement your own function to accomplish these tasks. Therefore, for the purpose of your projects/homeworks, please use an alternative software (R/Minitab/JMP) in order to perform the required screening techniques. There are some code lurking out there that does implement these screening techniques in Python, but these software notes will be going into some alternative methods that you can perform to screen for features. Use these software notes as supplementary material for your project and your future data science project endeavors. I also highly encourage you to go through this powerpoint to understand why feature selection is important!</p>
 
 </div>
 </div>
@@ -16543,7 +16543,7 @@ brandonkang@gatech.edu</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>NOTE</strong> Up until this point, I have not been splitting my datasets into training and testing since we have not reviewed some data preprocessing/cross validation concepts. Now that these software notes are up, we will be splitting our datasets into training/testing. For details in data preprocessing and cross validation, please refer to the appropriate software notes!</p>
+<p><strong>NOTE</strong> Up until this point, I have not been splitting my datasets into training and testing since we have not reviewed some data preprocessing/cross validation concepts. Now that these software notes are up, we will be splitting our datasets into training/testing. For details in data preprocessing and cross validation, please refer to <a href="https://brandonbks.github.io/static/concepts.pdf">here</a>!</p>
 
 </div>
 </div>
@@ -16664,7 +16664,7 @@ dtype: object</pre>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It's important to check pairwise correlations between features (as well as VIF) when running your models. We'll go into VIF in a later software notes, but we need to check correlations and VIF values in order to assess multicollinearity. As mentioned in the previous software notes, models with high multicollinearity may result in biased results, and in some cases, the matrix for solving for optimal parameters may be invertible. Any pairwise correlations above 0.8 or so may be worth noting, and if you see unusually high pairwise correlations, it may be a good idea to combine the features or remove one.
+<p>It's important to check pairwise correlations between features (as well as VIF) when running your models. We'll go into VIF in a later software notes, but we need to check correlations and VIF values in order to assess multicollinearity. As mentioned in the previous software notes, models with high multicollinearity may result in biased results, and in some cases, the matrix for solving for optimal parameters may be invertible. Any pairwise correlations above 0.8 or so may be worth noting, and if you see unusually high pairwise correlations, it may be a good idea to combine the features or remove one. Ridge regression or using PCA may also be an alternative if your model is suffering from multicollinearity.
 <br>
 <em>Note:</em> Why did I include only one triangular region?</p>
 
@@ -17245,12 +17245,12 @@ $$
 \min_\hat{\beta} \norm{y-X\hat{\beta}}_2^2
 \end{align}
 $$
-Linear regression, like any other model, can be susceptible to a pitfall known as <em>overfitting.</em> This concept will be discussed in another software note for general ML concepts. In linear regression, overfitting can occur where the $\hat{\beta}$'s can become extremely large.</p>
+Linear regression, like any other model, can be susceptible to a pitfall known as <em>overfitting.</em> This concept is described in much more detail in additional software notes <a href="https://brandonbks.github.io/static/concepts.pdf">here</a>. In linear regression, overfitting can occur where the $\hat{\beta}$'s can become extremely large.</p>
 <p><img src="https://i.stack.imgur.com/HGfzU.png" style="height:300px"></img>
-Pay attention to the green dots, which is what the regression model was trained on. The red line plots the regression equation using just ordinary least squares, and you can see that the regression equation is highly overfitting and does not generalize well with they yellow (validation) points. In other words, if this regression model was used to predict future observations, it would perform terribly, and you can visualize this with the yellow points. The other lines, using Lasso Regression, perform much better against the validation points.
+Pay attention to the green dots, which is what the regression model was trained on. The red line plots the regression equation using just ordinary least squares, and you can see that the regression equation is highly overfitting and does not generalize well with they yellow (validation) points. In other words, if this regression model was used to predict future observations, it would perform terribly, and you can visualize this with the yellow points. The other lines, using Lasso Regression, perform much better against the validation points, as you can see it fits the yellow points far better.
 <br>
 <br>
-In this case you can see that small perturbations in input values can cause dramatic changes in the output value, which means that the solution is not stable. You can see this in the red line above -- if you move slightly in one direction, especially from 0.8 to 1.0, there can be a dramatic change in the predicted value. Similarly, when you have features that are highly correlated, linear regression models will tend to overfit. 
+In this case you can see that small perturbations in input values can cause dramatic changes in the output value, which means that the solution is not stable. You can see this in the red line above -- if you move slightly in one direction, especially from 0.8 to 0.9, there can be a dramatic change in the predicted value. Similarly, when you have features that are highly correlated, linear regression models will tend to overfit. 
 <br>
 <br>
 In order to avoid this case, there are two altnerative methods: Ridge and Lasso Regression. However, we will only focus on Lasso Regression for these software notes, as it is more related to variable selection.</p>
@@ -17261,7 +17261,7 @@ In order to avoid this case, there are two altnerative methods: Ridge and Lasso 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Let's first detail the optimization problem for Lasso Regression
+<p>Let's first detail the constrained optimization problem for Lasso Regression:
 $$
 \begin{align}
 \min_\hat{\beta}&amp; \norm{y-X\hat{\beta}}_2^2  \\
@@ -17291,6 +17291,18 @@ $$<p>Note that the first term in the objective function is to minimize the sum o
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>We can visualize from above the OLS estimate if we just minimized the sum of squared errors as $\hat{\beta}$. Due to the additional constraint of the $\beta$ terms, the feasible set of solutions lie within the diamond region. The contours above represent the loss function, and you should note that for the optimal case (i.e when the contour first hits the feasible region), the contour will only hit at one of the verticies of the diamond. From this geometric viewpoint, you should be able to see that one of the $\beta$'s is forced to 0 (namely, $\beta_1$), whereas $\beta_2$ is non-zero. Because of the geometric nature of the L1-norm, Lasso Regression can also be a variable selection method. Since it forces some $\beta$'s to zero, you can find which features are not significant and do not affect the overall model while also minimizing overfitting compared to OLS.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Few notes:</p>
+<ol>
+<li>The size of $\lambda$ controls model complexity. The larger the value of $\lambda$, the more it restricts the parameters (since it penalizes the objective function more). Choose $\lambda$ through cross validation.</li>
+<li>Do not use Lasso Regression when your model is suffering from multicollinearity. Ridge Regression should be used instead.</li>
+</ol>
 
 </div>
 </div>
@@ -17376,7 +17388,7 @@ intercept is 0.0
 Another popular method is to run some tree-based regression model (such as Random Forest or Gradient Boosting) on your dataset and output feature importance values. These feature importance values are derived from the amount of times a feature was split on when creating the tree. If a feature has very low feature importance, it may be a good idea to remove the feature.
 <br>
 <br>
-Although these two methods are popular and powerful, we won't go over them here. I will delve into them deeper in a separate software notes dedicated to more advanced Machine Learning methods!</p>
+Although these two methods are popular and powerful, we won't go over them here. I will delve into them deeper in a separate software notes dedicated to more Machine Learning methods!</p>
 
 </div>
 </div>
