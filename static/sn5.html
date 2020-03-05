@@ -16352,7 +16352,7 @@ brandonkang@gatech.edu</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -16550,7 +16550,7 @@ brandonkang@gatech.edu</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[52]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfHouses</span><span class="o">.</span><span class="n">dtypes</span>
@@ -16566,7 +16566,7 @@ brandonkang@gatech.edu</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[52]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -16608,7 +16608,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[53]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">corr</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
@@ -16631,7 +16631,7 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[53]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -16680,7 +16680,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[70]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">selector</span> <span class="o">=</span> <span class="n">SelectKBest</span><span class="p">(</span><span class="n">f_regression</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="s2">&quot;all&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span> <span class="c1">#You can modify the k parameter to retain the k best </span>
@@ -16696,7 +16696,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[71]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfPVal</span> <span class="o">=</span> <span class="n">dfPVal</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;p-value&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -16714,7 +16714,7 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[71]:</div>
+    <div class="prompt output_prompt">Out[7]:</div>
 
 
 
@@ -16828,7 +16828,7 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[101]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfTotalScores</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="mi">0</span><span class="p">:</span> <span class="s2">&quot;feature&quot;</span><span class="p">},</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
@@ -16850,7 +16850,7 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfTotalScores</span> <span class="o">=</span> <span class="n">dfTotalScores</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;average&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -16868,7 +16868,7 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[102]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -16911,83 +16911,83 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
   <tbody>
     <tr>
       <th>sqft_living</th>
-      <td>0.363642</td>
-      <td>0.346335</td>
-      <td>0.347409</td>
-      <td>0.345578</td>
-      <td>0.350741</td>
+      <td>0.363666</td>
+      <td>0.347219</td>
+      <td>0.348649</td>
+      <td>0.345850</td>
+      <td>0.351346</td>
       <td>1</td>
     </tr>
     <tr>
       <th>sqft_above</th>
-      <td>0.268089</td>
-      <td>0.257452</td>
-      <td>0.251431</td>
-      <td>0.253689</td>
-      <td>0.257665</td>
+      <td>0.267201</td>
+      <td>0.257956</td>
+      <td>0.254658</td>
+      <td>0.253678</td>
+      <td>0.258373</td>
       <td>2</td>
     </tr>
     <tr>
       <th>bathrooms</th>
-      <td>0.213234</td>
-      <td>0.207311</td>
-      <td>0.202631</td>
-      <td>0.210228</td>
-      <td>0.208351</td>
+      <td>0.216759</td>
+      <td>0.212257</td>
+      <td>0.203334</td>
+      <td>0.208796</td>
+      <td>0.210287</td>
       <td>3</td>
     </tr>
     <tr>
-      <th>bedrooms</th>
-      <td>0.079608</td>
-      <td>0.087091</td>
-      <td>0.075195</td>
-      <td>0.071285</td>
-      <td>0.078295</td>
+      <th>floors</th>
+      <td>0.081687</td>
+      <td>0.081788</td>
+      <td>0.076211</td>
+      <td>0.072731</td>
+      <td>0.078104</td>
       <td>4</td>
     </tr>
     <tr>
-      <th>floors</th>
-      <td>0.079869</td>
-      <td>0.076208</td>
-      <td>0.074857</td>
-      <td>0.073145</td>
-      <td>0.076020</td>
+      <th>bedrooms</th>
+      <td>0.079127</td>
+      <td>0.064693</td>
+      <td>0.071998</td>
+      <td>0.082188</td>
+      <td>0.074502</td>
       <td>5</td>
     </tr>
     <tr>
-      <th>sqft_lot</th>
-      <td>0.073335</td>
-      <td>0.067923</td>
-      <td>0.063078</td>
-      <td>0.065641</td>
-      <td>0.067494</td>
+      <th>sqft_basement</th>
+      <td>0.076586</td>
+      <td>0.067670</td>
+      <td>0.072315</td>
+      <td>0.063837</td>
+      <td>0.070102</td>
       <td>6</td>
     </tr>
     <tr>
-      <th>sqft_basement</th>
-      <td>0.073847</td>
-      <td>0.072475</td>
-      <td>0.058146</td>
-      <td>0.059812</td>
-      <td>0.066070</td>
+      <th>sqft_lot</th>
+      <td>0.071790</td>
+      <td>0.066382</td>
+      <td>0.062460</td>
+      <td>0.065868</td>
+      <td>0.066625</td>
       <td>7</td>
     </tr>
     <tr>
       <th>view</th>
-      <td>0.049462</td>
-      <td>0.052908</td>
-      <td>0.045960</td>
-      <td>0.053290</td>
-      <td>0.050405</td>
+      <td>0.060941</td>
+      <td>0.058304</td>
+      <td>0.059905</td>
+      <td>0.048826</td>
+      <td>0.056994</td>
       <td>8</td>
     </tr>
     <tr>
       <th>waterfront</th>
-      <td>0.013603</td>
-      <td>0.011205</td>
-      <td>0.014816</td>
-      <td>0.005754</td>
-      <td>0.011344</td>
+      <td>0.009288</td>
+      <td>0.012665</td>
+      <td>0.006624</td>
+      <td>0.009387</td>
+      <td>0.009491</td>
       <td>9</td>
     </tr>
   </tbody>
@@ -17033,7 +17033,7 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mlr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
@@ -17063,7 +17063,7 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[4]:</div>
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -17083,7 +17083,7 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">rfecv</span><span class="o">.</span><span class="n">support_</span><span class="p">]]</span>
@@ -17100,7 +17100,7 @@ I wrapped this function with SelectKBest which will essentially select the "K" b
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[9]:</div>
+    <div class="prompt output_prompt">Out[11]:</div>
 
 
 
@@ -17309,12 +17309,12 @@ $$<p>Note that the first term in the objective function is to minimize the sum o
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">scaler</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span>
-<span class="n">X_train_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="n">reg</span> <span class="o">=</span> <span class="n">LassoCV</span><span class="p">(</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">fit_intercept</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_standard</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">X_train_standard</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
+<span class="n">reg</span> <span class="o">=</span> <span class="n">LassoCV</span><span class="p">(</span><span class="n">cv</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_standard</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -17324,7 +17324,7 @@ $$<p>Note that the first term in the objective function is to minimize the sum o
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">ind</span><span class="p">,</span> <span class="n">col</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">):</span>
@@ -17346,16 +17346,16 @@ $$<p>Note that the first term in the objective function is to minimize the sum o
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>bedrooms  for Beta_ 1  =  -38905.8189356352
-bathrooms  for Beta_ 2  =  5023.031231295666
-sqft_living  for Beta_ 3  =  253873.18275020926
-sqft_lot  for Beta_ 4  =  -13647.770754636498
-floors  for Beta_ 5  =  3859.711675995229
-waterfront  for Beta_ 6  =  41850.70806488225
-view  for Beta_ 7  =  56411.68564459221
+<pre>bedrooms  for Beta_ 1  =  -40541.01039716413
+bathrooms  for Beta_ 2  =  5519.98245096863
+sqft_living  for Beta_ 3  =  255061.66301448777
+sqft_lot  for Beta_ 4  =  -14552.196182652677
+floors  for Beta_ 5  =  4144.11955991439
+waterfront  for Beta_ 6  =  42292.440671644916
+view  for Beta_ 7  =  56666.25645653237
 sqft_above  for Beta_ 8  =  0.0
 sqft_basement  for Beta_ 9  =  0.0
-intercept is 0.0
+intercept is 537729.2636658074
 </pre>
 </div>
 </div>
