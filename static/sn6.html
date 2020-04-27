@@ -16367,7 +16367,7 @@ brandonkang@gatech.edu</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -16382,6 +16382,8 @@ brandonkang@gatech.edu</p>
 <span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
 <span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
 <span class="kn">from</span> <span class="nn">statsmodels.formula.api</span> <span class="kn">import</span> <span class="n">ols</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
 <span class="n">jtplot</span><span class="o">.</span><span class="n">style</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s1">&#39;onedork&#39;</span><span class="p">)</span>
 </pre></div>
 
@@ -16433,7 +16435,7 @@ brandonkang@gatech.edu</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;seaborn.axisgrid.PairGrid at 0x1cb92fac308&gt;</pre>
+<pre>&lt;seaborn.axisgrid.PairGrid at 0x2118ec19048&gt;</pre>
 </div>
 
 </div>
@@ -16910,7 +16912,7 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dfHouses</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;houseData2.csv&quot;</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -16927,7 +16929,7 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
@@ -16943,7 +16945,7 @@ $$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[3]:</div>
+    <div class="prompt output_prompt">Out[4]:</div>
 
 
 
@@ -17126,7 +17128,7 @@ $$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#PCA is affected by scale, so need to standardize</span>
@@ -17430,22 +17432,43 @@ $$
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this demo, I showed how you can use a threshold for determining how many PC to keep in the model. However, a better way to implement this is to run cross validation. Let $\lambda$ be the number of principal components in your model, and run cross validation over different values of $\lambda$ and choose the $\lambda$ that gives the best predictive power. This is known as PCR, Principal Components Regression.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span> <span class="o">=</span> <span class="n">X_train</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">train</span><span class="p">[</span><span class="s2">&quot;price&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">values</span>
-<span class="n">formula</span> <span class="o">=</span> <span class="s2">&quot;price ~&quot;</span>
-<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">col</span><span class="o">==</span><span class="s2">&quot;sqft_lot15&quot;</span><span class="p">:</span>
-        <span class="n">formula</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">col</span>
-    <span class="k">elif</span> <span class="n">col</span><span class="o">!=</span><span class="s2">&quot;price&quot;</span><span class="p">:</span>
-        <span class="n">formula</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="n">col</span> <span class="o">+</span> <span class="s2">&quot; +&quot;</span>
-        
-<span class="n">model</span> <span class="o">=</span> <span class="n">ols</span><span class="p">(</span><span class="n">formula</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">train</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span> 
-<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pipe</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;pca&#39;</span><span class="p">,</span> <span class="n">PCA</span><span class="p">()),</span> <span class="p">(</span><span class="s1">&#39;least_squares&#39;</span><span class="p">,</span> <span class="n">LinearRegression</span><span class="p">())])</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pca__n_components&#39;</span><span class="p">:</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">19</span><span class="p">)}</span>
+<span class="n">search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+
+<span class="n">PCAreg</span> <span class="o">=</span> <span class="n">search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_standard</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">PCAreg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[50]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n_comp</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">PCAreg</span><span class="o">.</span><span class="n">best_params_</span><span class="o">.</span><span class="n">values</span><span class="p">())[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">coef</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Intercept&quot;</span><span class="p">:</span> <span class="n">PCAreg</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">intercept_</span><span class="p">}</span>
+
+<span class="n">pcaCoef</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="s2">&quot;PCA &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n_comp</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)],</span> <span class="n">PCAreg</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">coef_</span><span class="p">))</span>
+<span class="n">pcaCoef</span><span class="p">[</span><span class="s2">&quot;Intercept&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">PCAreg</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">steps</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="n">pcaCoef</span>
 </pre></div>
 
     </div>
@@ -17458,117 +17481,30 @@ $$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[17]:</div>
+    <div class="prompt output_prompt">Out[50]:</div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<table class="simpletable">
-<caption>OLS Regression Results</caption>
-<tr>
-  <th>Dep. Variable:</th>          <td>price</td>      <th>  R-squared:         </th>  <td>   0.706</td>  
-</tr>
-<tr>
-  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th>  <td>   0.705</td>  
-</tr>
-<tr>
-  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th>  <td>   2129.</td>  
-</tr>
-<tr>
-  <th>Date:</th>             <td>Wed, 25 Mar 2020</td> <th>  Prob (F-statistic):</th>   <td>  0.00</td>   
-</tr>
-<tr>
-  <th>Time:</th>                 <td>13:41:44</td>     <th>  Log-Likelihood:    </th> <td>-2.0597e+05</td>
-</tr>
-<tr>
-  <th>No. Observations:</th>      <td> 15117</td>      <th>  AIC:               </th>  <td>4.120e+05</td> 
-</tr>
-<tr>
-  <th>Df Residuals:</th>          <td> 15099</td>      <th>  BIC:               </th>  <td>4.121e+05</td> 
-</tr>
-<tr>
-  <th>Df Model:</th>              <td>    17</td>      <th>                     </th>      <td> </td>     
-</tr>
-<tr>
-  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>      <td> </td>     
-</tr>
-</table>
-<table class="simpletable">
-<tr>
-        <td></td>           <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
-</tr>
-<tr>
-  <th>Intercept</th>     <td> 6.645e+06</td> <td> 3.48e+06</td> <td>    1.909</td> <td> 0.056</td> <td>-1.78e+05</td> <td> 1.35e+07</td>
-</tr>
-<tr>
-  <th>bedrooms</th>      <td>-3.646e+04</td> <td> 2343.555</td> <td>  -15.557</td> <td> 0.000</td> <td>-4.11e+04</td> <td>-3.19e+04</td>
-</tr>
-<tr>
-  <th>bathrooms</th>     <td> 4.406e+04</td> <td> 3915.200</td> <td>   11.253</td> <td> 0.000</td> <td> 3.64e+04</td> <td> 5.17e+04</td>
-</tr>
-<tr>
-  <th>sqft_living</th>   <td>  106.5377</td> <td>    2.732</td> <td>   38.990</td> <td> 0.000</td> <td>  101.182</td> <td>  111.894</td>
-</tr>
-<tr>
-  <th>sqft_lot</th>      <td>    0.0972</td> <td>    0.056</td> <td>    1.726</td> <td> 0.084</td> <td>   -0.013</td> <td>    0.207</td>
-</tr>
-<tr>
-  <th>floors</th>        <td> 1.007e+04</td> <td> 4282.272</td> <td>    2.351</td> <td> 0.019</td> <td> 1675.349</td> <td> 1.85e+04</td>
-</tr>
-<tr>
-  <th>waterfront</th>    <td> 6.055e+05</td> <td> 2.04e+04</td> <td>   29.650</td> <td> 0.000</td> <td> 5.66e+05</td> <td> 6.46e+05</td>
-</tr>
-<tr>
-  <th>view</th>          <td> 5.083e+04</td> <td> 2548.366</td> <td>   19.945</td> <td> 0.000</td> <td> 4.58e+04</td> <td> 5.58e+04</td>
-</tr>
-<tr>
-  <th>condition</th>     <td> 2.852e+04</td> <td> 2798.610</td> <td>   10.190</td> <td> 0.000</td> <td>  2.3e+04</td> <td>  3.4e+04</td>
-</tr>
-<tr>
-  <th>grade</th>         <td> 1.006e+05</td> <td> 2572.584</td> <td>   39.110</td> <td> 0.000</td> <td> 9.56e+04</td> <td> 1.06e+05</td>
-</tr>
-<tr>
-  <th>sqft_above</th>    <td>   62.7398</td> <td>    2.688</td> <td>   23.342</td> <td> 0.000</td> <td>   57.471</td> <td>   68.008</td>
-</tr>
-<tr>
-  <th>sqft_basement</th> <td>   43.7970</td> <td>    3.151</td> <td>   13.899</td> <td> 0.000</td> <td>   37.621</td> <td>   49.973</td>
-</tr>
-<tr>
-  <th>yr_built</th>      <td>-2701.0872</td> <td>   86.317</td> <td>  -31.293</td> <td> 0.000</td> <td>-2870.278</td> <td>-2531.896</td>
-</tr>
-<tr>
-  <th>yr_renovated</th>  <td>   20.3136</td> <td>    4.373</td> <td>    4.645</td> <td> 0.000</td> <td>   11.742</td> <td>   28.886</td>
-</tr>
-<tr>
-  <th>zipcode</th>       <td> -563.1330</td> <td>   39.141</td> <td>  -14.387</td> <td> 0.000</td> <td> -639.854</td> <td> -486.412</td>
-</tr>
-<tr>
-  <th>lat</th>           <td> 5.828e+05</td> <td> 1.28e+04</td> <td>   45.450</td> <td> 0.000</td> <td> 5.58e+05</td> <td> 6.08e+05</td>
-</tr>
-<tr>
-  <th>long</th>          <td>-2.083e+05</td> <td> 1.56e+04</td> <td>  -13.381</td> <td> 0.000</td> <td>-2.39e+05</td> <td>-1.78e+05</td>
-</tr>
-<tr>
-  <th>sqft_living15</th> <td>   28.6186</td> <td>    4.124</td> <td>    6.940</td> <td> 0.000</td> <td>   20.536</td> <td>   36.702</td>
-</tr>
-<tr>
-  <th>sqft_lot15</th>    <td>   -0.4215</td> <td>    0.086</td> <td>   -4.898</td> <td> 0.000</td> <td>   -0.590</td> <td>   -0.253</td>
-</tr>
-</table>
-<table class="simpletable">
-<tr>
-  <th>Omnibus:</th>       <td>12307.009</td> <th>  Durbin-Watson:     </th>  <td>   1.988</td> 
-</tr>
-<tr>
-  <th>Prob(Omnibus):</th>  <td> 0.000</td>   <th>  Jarque-Bera (JB):  </th> <td>984498.875</td>
-</tr>
-<tr>
-  <th>Skew:</th>           <td> 3.389</td>   <th>  Prob(JB):          </th>  <td>    0.00</td> 
-</tr>
-<tr>
-  <th>Kurtosis:</th>       <td>41.950</td>   <th>  Cond. No.          </th>  <td>5.28e+17</td> 
-</tr>
-</table><br/><br/>Warnings:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The smallest eigenvalue is 5.5e-22. This might indicate that there are<br/>strong multicollinearity problems or that the design matrix is singular.
+
+<div class="output_text output_subarea output_execute_result">
+<pre>{&#39;PCA 1&#39;: 100517.83758331067,
+ &#39;PCA 2&#39;: 112406.49612703382,
+ &#39;PCA 3&#39;: 2598.565784282922,
+ &#39;PCA 4&#39;: 33095.6066916263,
+ &#39;PCA 5&#39;: 7180.993171493938,
+ &#39;PCA 6&#39;: -16213.048551482932,
+ &#39;PCA 7&#39;: -93135.30570134347,
+ &#39;PCA 8&#39;: -9911.387025284497,
+ &#39;PCA 9&#39;: -27113.584844780584,
+ &#39;PCA 10&#39;: -5341.834410492536,
+ &#39;PCA 11&#39;: 51440.96374961778,
+ &#39;PCA 12&#39;: 60373.68451543885,
+ &#39;PCA 13&#39;: 37094.65546284894,
+ &#39;PCA 14&#39;: 30778.326005076207,
+ &#39;PCA 15&#39;: -44456.847841377254,
+ &#39;PCA 16&#39;: -56705.73476964535,
+ &#39;PCA 17&#39;: -20187.23831390988,
+ &#39;Intercept&#39;: 542036.6354435404}</pre>
 </div>
 
 </div>
@@ -17580,7 +17516,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Relatively equal performance using PCA and using all features, mainly because feature space is small and we have many data points. As you scale up with datasets with large feature dimensionality, PCA and dimensionality reduction will be especially helpful for combatting against overfitting and minimizing computational expense.</p>
+<p>With using CV, it seems like using 17 principal components yields the best result.</p>
 
 </div>
 </div>
@@ -17595,7 +17531,7 @@ $$
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>One issue with multicollinearity is its tendency to inflate the variance of the estimators and cause wild changes in the estimated coefficients. Similarly to Lasso Regression, which is in <a href="https://brandonbks.github.io/static/sn5.html">Software Notes 5</a>, we are trying to constrain the size of the coefficients to reduce the variance in our model. I highly suggest to review the "Lasso Regression" section first, as I detail some effects from overfitting and to compare the optimization problems between the two. Let's detail the constrained optimization problem, which is quite similar to that of Lasso Regression except for one change. Note that there is also another Lagrangian multiplier here similar to that of Lasso Regression.
+<p>One issue with multicollinearity is its tendency to inflate the variance of the estimators and cause wild changes in the estimated coefficients. Furthermore, OLS tends to have small bias but high variance. Similarly to Lasso Regression, which is in <a href="https://brandonbks.github.io/static/sn5.html">Software Notes 5</a>, we are trying to constrain the size of the coefficients to reduce the variance in our model. I highly suggest to review the "Lasso Regression" section first, as I detail some effects from overfitting and to compare the optimization problems between the two. Let's detail the constrained optimization problem, which is quite similar to that of Lasso Regression except for one change. Note that there is also another Lagrangian multiplier here similar to that of Lasso Regression.
 $$
 \begin{align}
 \min_\hat{\beta} \norm{y-X\hat{\beta}}_2^2 + \lambda \norm{\hat{\beta}_k}_2^2
@@ -17634,7 +17570,8 @@ f(x) &amp;= \norm{y-X\hat{\beta}}_2^2 + \lambda \norm{\hat{\beta}_k}_2^2 \\
 $$
 \hat{\beta}=(X^TX)^{-1}X^Ty
 $$
-In the presence of multicollinearity, the matrix, $X^TX$ is not invertible, so there is no feasible solution for ordinary regression. However, adding <em>nearly any</em> pertubation in the form of $\lambda I$ will force the matrix to to become non-singular and thus invertible, which is how Ridge Regression combats multicollinearity.</p>
+In the presence of multicollinearity, the matrix, $X^TX$ is not invertible, so there is no feasible solution for ordinary regression. However, adding <em>nearly any</em> pertubation in the form of $\lambda I$ will force the matrix to to become non-singular and thus invertible, which is how Ridge Regression combats multicollinearity. Furthermore, when using OLS with correlated variables, highly correlated regressors may try to cancel each other out, where a large positive $\beta$ may cancel out a large negative $\beta$. By penalizing the size of $\beta$, Ridge Regression can avoid this phenomenon.</p>
+<p>Note that the bias-variance tradeoff still applies here. Although the bias may increase, penalizing the size of the coefficients in the model will decrease the variance in the model, leading to potentially better predictive power.</p>
 
 </div>
 </div>
