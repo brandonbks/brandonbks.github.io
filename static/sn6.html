@@ -17553,7 +17553,7 @@ In the presence of multicollinearity, the matrix, $X^TX$ is not invertible, so t
 You can then estimate the standard error of the $\beta$ estimator with the following where $\bar{\hat{\beta}}=\frac{1}{K}\sum_{k=1}^K\hat{\beta}^{(k)}$:</li>
 </ol>
 $$
-SE(\hat{\beta})=\sqrt{\frac{1}{K}\sum_{k=1}^K\left(\hat{\beta}^{(k)}-\bar{\hat{\beta}}\right)^2}
+SE(\hat{\beta})=\sqrt{\frac{1}{K-1}\sum_{k=1}^K\left(\hat{\beta}^{(k)}-\bar{\hat{\beta}}\right)^2}
 $$<p>This process is pretty simple, but powerful, since we can now compute a confidence interval for the estimator. Approximate the $1-\alpha$ confidence interval of the estimator with the following:</p>
 $$
 \left[2\hat{\beta}-q_{1-\alpha/2}, 2\hat{\beta}-q_{\alpha/2}\right]

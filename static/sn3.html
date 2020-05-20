@@ -13018,9 +13018,21 @@ ul.typeahead-list  > li > a.pull-right {
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
-    div#notebook {
- font-family: sans-serif;
- font-size: 10.0pt;
+    @font-face {
+ font-family: "Open Sans";
+ font-weight: normal;
+ font-style: normal;
+ src: local('"Open Sans"'), url('fonts/open-sans-regular.ttf') format('truetype');
+}
+@font-face {
+ font-family: "PT Sans";
+ font-weight: normal;
+ font-style: normal;
+ src: local('"PT Sans"'), url('fonts/pt-sans-regular.ttf') format('truetype');
+}
+div#notebook {
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  line-height: 170%;
  color: #b5c2d9;
  -webkit-font-smoothing: antialiased !important;
@@ -13028,8 +13040,8 @@ ul.typeahead-list  > li > a.pull-right {
 }
 body,
 div.body {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  color: #899ab8;
  background-color: #1d1e23;
  background: #1d1e23;
@@ -13043,7 +13055,7 @@ body.notebook_app {
  overflow-y: hidden;
 }
 a {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  color: #899ab8;
  -webkit-font-smoothing: antialiased !important;
 }
@@ -13206,7 +13218,7 @@ span#sort-name.btn.btn-xs.btn-default.sort-action:hover .fa {
  font-size: 18px;
 }
 div#notebook_toolbar div.dynamic-instructions {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 17px;
  color: #526488;
 }
@@ -13266,14 +13278,14 @@ body > #header {
  z-index: 100;
 }
 .list_container {
- font-size: 10.0pt;
+ font-size: 13pt;
  color: #899ab8;
  border: none;
  text-shadow: none !important;
 }
 .list_container > div {
  border-bottom: 1px solid rgba(80,92,133,.22);
- font-size: 10.0pt;
+ font-size: 13pt;
 }
 .list_header > div,
 .list_item > div {
@@ -13286,7 +13298,7 @@ body > #header {
  margin-left: -1px;
  vertical-align: middle;
  line-height: 22px;
- font-size: 10.0pt;
+ font-size: 13pt;
 }
 .item_icon {
  color: #4c8be2;
@@ -13332,7 +13344,7 @@ body > #header {
 }
 button#tree-selector-btn {
  height: 34px;
- font-size: 9.0pt;
+ font-size: 12.0pt;
  border: none;
  left: 0px;
  border-radius: 0px !important;
@@ -13378,7 +13390,7 @@ div.list_item:hover {
  background-color: rgba(80,90,133,.06);
 }
 .breadcrumb > li {
- font-size: 9.0pt;
+ font-size: 12.0pt;
  color: #899ab8;
  border: none;
  text-shadow: none !important;
@@ -13397,14 +13409,14 @@ div.list_item:hover {
  margin-top: -2px;
 }
 ul#tabs a {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 13.5pt;
  font-weight: normal;
  font-style: normal;
  text-shadow: none !important;
 }
 .nav-tabs {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 13.5pt;
  font-weight: normal;
  font-style: normal;
@@ -13465,8 +13477,8 @@ ul#tabs a {
  -webkit-font-smoothing: subpixel-antialiased !important;
 }
 div#notebook {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  padding-top: 4px;
 }
 .notebook_app {
@@ -13508,8 +13520,8 @@ div#header-container {
 }
 #header,
 .edit_app #header {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  box-shadow: none;
  background-color: #1d1e23;
 }
@@ -13550,16 +13562,16 @@ p.navbar-text.indicator_area {
  color: #7aa05d;
 }
 .navbar-default {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  background-color: #1d1e23;
  border-color: #313643;
  line-height: 1.5em;
  padding-bottom: 0px;
 }
 .navbar-default .navbar-nav > li > a {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  color: #899ab8;
  display: block;
  line-height: 1.5em;
@@ -13655,7 +13667,7 @@ div.notification_widget.info,
  color: #4c8be2;
 }
 .item_buttons .kernel-name {
- font-size: 10.0pt;
+ font-size: 13pt;
  color: #4c8be2;
 }
 .running_notebook_icon:before {
@@ -13673,12 +13685,12 @@ div.notification_widget.info,
 .item_buttons .running-indicator {
  padding-top: 4px;
  color: #94c273;
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
 }
 #notification_trusted {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  border: none;
  background: transparent;
  background-color: transparent;
@@ -13826,14 +13838,14 @@ i.fa.fa-icon {
 }
 .fa {
  display: inline-block;
- font: normal normal normal 10pt/1 "FontAwesome", sans-serif;
+ font: normal normal normal 10pt/1 "FontAwesome", "PT Sans", sans-serif;
  text-rendering: auto;
  -webkit-font-smoothing: antialiased;
  -moz-osx-font-smoothing: grayscale;
 }
 .dropdown-menu {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  box-shadow: none;
  padding: 0px;
  text-align: left;
@@ -13843,8 +13855,8 @@ i.fa.fa-icon {
  line-height: 1;
 }
 .dropdown-menu:hover {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  box-shadow: none;
  padding: 0px;
  text-align: left;
@@ -13854,8 +13866,8 @@ i.fa.fa-icon {
  line-height: 1;
 }
 .dropdown-menu > li > a {
- font-family: sans-serif;
- font-size: 9.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 12.0pt;
  display: block;
  padding: 10px 20px 9px 10px;
  color: #899ab8;
@@ -13888,8 +13900,8 @@ i.fa.fa-icon {
 .dropdown-menu > .disabled > a,
 .dropdown-menu > .disabled > a:hover,
 .dropdown-menu > .disabled > a:focus {
- font-family: sans-serif;
- font-size: 9.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 12.0pt;
  font-weight: normal;
  color: #526488;
  padding: none;
@@ -13918,7 +13930,7 @@ div.kse-dropdown > .dropdown-menu,
 }
 .btn,
 .btn-default {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  color: #899ab8;
  background: #303542;
  background-color: #303542;
@@ -14003,7 +14015,7 @@ div.kse-dropdown > .dropdown-menu,
 .item_buttons > .btn,
 .item_buttons > .btn-group,
 .item_buttons > .input-group {
- font-size: 10.0pt;
+ font-size: 13pt;
  background: transparent;
  background-color: transparent;
  border: 0px solid #2e3642;
@@ -14125,8 +14137,8 @@ div.dynamic-buttons > button,
  z-index: 2;
 }
 .dropdown-header {
- font-family: sans-serif !important;
- font-size: 10.0pt !important;
+ font-family: "PT Sans", sans-serif !important;
+ font-size: 13pt !important;
  color: #7aa05d !important;
  border-bottom: none !important;
  padding: 0px !important;
@@ -14135,7 +14147,7 @@ div.dynamic-buttons > button,
 span#last-modified.btn.btn-xs.btn-default.sort-action,
 span#sort-name.btn.btn-xs.btn-default.sort-action,
 span#file-size.btn.btn-xs.btn-default.sort-action {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 16px;
  background-color: transparent;
  background: transparent;
@@ -14190,7 +14202,7 @@ fieldset[disabled] .btn-default.focus {
 }
 .input-group-addon {
  padding: 2px 5px;
- font-size: 10.0pt;
+ font-size: 13pt;
  font-weight: normal;
  height: auto;
  color: #899ab8;
@@ -14269,8 +14281,8 @@ div.modal-footer > button:hover {
  transition: 200ms ease;
 }
 .modal-content {
- font-family: sans-serif;
- font-size: 9.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 12.0pt;
  position: relative;
  background: #2e3642;
  background-color: #2e3642;
@@ -14280,8 +14292,8 @@ div.modal-footer > button:hover {
  outline: none;
 }
 .modal-header {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  color: #899ab8;
  background: #2e3642;
  background-color: #2e3642;
@@ -14290,7 +14302,7 @@ div.modal-footer > button:hover {
  min-height: 16.4286px;
 }
 .modal-content h4 {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 16pt;
  color: #899ab8;
  padding: 5px;
@@ -14324,8 +14336,8 @@ div.panel,
 div.panel-default,
 .panel,
 .panel-default {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  background-color: #384152;
  color: #899ab8;
  margin-bottom: 14px;
@@ -14352,7 +14364,7 @@ div.container-fluid {
 }
 div.form-control,
 .form-control {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: initial;
  color: #899ab8;
  background-color: #262c36;
@@ -14384,7 +14396,7 @@ textarea {
 }
 select.form-control.select-xs {
  height: 33px;
- font-size: 10.0pt;
+ font-size: 13pt;
 }
 .toolbar select,
 .toolbar label {
@@ -14619,15 +14631,15 @@ div.prompt,
  font-family: monospace, monospace;
  font-size: 9pt !important;
  font-weight: normal;
- color: transparent;
+ color: #526488;
  line-height: 170%;
  padding: 0px;
  padding-top: 4px;
  padding-left: 0px;
  padding-right: 1px;
  text-align: right !important;
- min-width: 8ex !important;
- width: 8ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
 }
 div.prompt.input_prompt {
  font-size: 9pt !important;
@@ -14637,8 +14649,8 @@ div.prompt.input_prompt {
  border-bottom-left-radius: 0px;
  border-bottom-right-radius: 0px;
  padding-right: 3px;
- min-width: 8ex;
- width: 8ex !important;
+ min-width: 11.5ex;
+ width: 11.5ex !important;
 }
 div.cell.code_cell .input_prompt {
  border-right: 2px solid rgba(53,114,198,.75);
@@ -14758,8 +14770,8 @@ div.prompt.output_prompt {
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 11ex !important;
- width: 11ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
  border-right: 2px solid transparent;
 }
 div.out_prompt_overlay.prompt {
@@ -14770,8 +14782,8 @@ div.out_prompt_overlay.prompt {
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
  border-bottom-right-radius: 0px;
- min-width: 11ex !important;
- width: 11ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
  border-right: 2px solid transparent;
  color: transparent;
 }
@@ -14784,8 +14796,8 @@ div.out_prompt_overlay.prompt:hover {
  -moz-border-radius: 2px;
  border-top-right-radius: 0px;
  border-top-left-radius: 0px;
- min-width: 11ex !important;
- width: 11ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
  border-right: 2px solid #3e4458 !important;
 }
 div.cell.code_cell .output_prompt {
@@ -14807,8 +14819,8 @@ div.cell.selected .out_prompt_overlay.prompt {
 div.text_cell,
 div.text_cell_render pre,
 div.text_cell_render {
- font-family: sans-serif;
- font-size: 10pt;
+ font-family: "Open Sans", sans-serif;
+ font-size: 13pt;
  line-height: 130% !important;
  color: #abb7ce;
  background: #2c303c;
@@ -14838,28 +14850,28 @@ div.cell.text_cell .CodeMirror pre {
  line-height: 170% !important;
 }
 div.cell.text_cell.rendered.selected {
- font-family: sans-serif;
+ font-family: "Open Sans", sans-serif;
  line-height: 170% !important;
  background: #2c303c;
  background-color: #2c303c;
  border-radius: 0px;
 }
 div.cell.text_cell.unrendered.selected {
- font-family: sans-serif;
+ font-family: "Open Sans", sans-serif;
  line-height: 170% !important;
  background: #2c303c;
  background-color: #2c303c;
  border-radius: 0px;
 }
 div.cell.text_cell.selected {
- font-family: sans-serif;
+ font-family: "Open Sans", sans-serif;
  line-height: 170% !important;
  background: #2c303c;
  background-color: #2c303c;
  border-radius: 0px;
 }
 .edit_mode div.cell.text_cell.selected {
- font-family: sans-serif;
+ font-family: "Open Sans", sans-serif;
  line-height: 170% !important;
  background: #2c303c;
  background-color: #2c303c;
@@ -14868,7 +14880,7 @@ div.cell.text_cell.selected {
 div.text_cell.unrendered,
 div.text_cell.unrendered.selected,
 div.edit_mode div.text_cell.unrendered {
- font-family: sans-serif;
+ font-family: "Open Sans", sans-serif;
  line-height: 170% !important;
  background: #2c303c;
  background-color: #2c303c;
@@ -14876,51 +14888,51 @@ div.edit_mode div.text_cell.unrendered {
 }
 div.cell.text_cell .prompt {
  border-right: 0;
- min-width: 8ex !important;
- width: 8ex !important;
+ min-width: 11.5ex !important;
+ width: 11.5ex !important;
 }
 div.cell.text_cell.rendered .prompt {
  font-family: monospace, monospace;
  font-size: 9.5pt !important;
  font-weight: normal;
- color: transparent !important;
+ color: #526488 !important;
  text-align: right !important;
- min-width: 11ex !important;
- width: 11ex !important;
+ min-width: 14.5ex !important;
+ width: 14.5ex !important;
  background-color: #2c303c;
- border-right: 2px solid transparent;
+ border-right: 2px solid rgba(148,204,114,.3);
  border-left: 4px solid #2c303c;
 }
 div.cell.text_cell.unrendered .prompt {
  font-family: monospace, monospace;
  font-size: 9.5pt !important;
  font-weight: normal;
- color: transparent !important;
+ color: #526488 !important;
  text-align: right !important;
- min-width: 11ex !important;
- width: 11ex !important;
- border-right: 2px solid transparent;
+ min-width: 14.5ex !important;
+ width: 14.5ex !important;
+ border-right: 2px solid rgba(148,204,114,.3);
  border-left: 4px solid #2c303c;
  background-color: #2c303c;
 }
 div.cell.text_cell.rendered .prompt {
- border-right: 2px solid transparent;
+ border-right: 2px solid rgba(148,204,114,.3);
 }
 div.cell.text_cell.rendered.selected .prompt {
  top: 0;
  border-left: 4px solid #48536f;
- border-right: 2px solid transparent;
+ border-right: 2px solid rgba(148,204,114,.3);
 }
 div.text_cell.unrendered.selected .prompt,
 div.text_cell.rendered.selected .prompt {
  top: 0;
  background: #2c303c;
  border-left: 4px solid #48536f;
- border-right: 2px solid transparent;
+ border-right: 2px solid rgba(148,204,114,.3);
 }
 div.rendered_html code {
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 11pt;
  padding-top: 3px;
  padding-left: 2px;
  color: #b5c2d9;
@@ -14936,7 +14948,7 @@ samp {
 .well code,
 code {
  font-family: monospace, monospace;
- font-size: 10.0pt !important;
+ font-size: 11pt !important;
  line-height: 170% !important;
  color: #abb7ce;
  background: #262c36;
@@ -14945,7 +14957,7 @@ code {
 }
 kbd {
  padding: 1px;
- font-size: 10.0pt;
+ font-size: 11pt;
  font-weight: 800;
  color: #b5c2d9;
  background-color: transparent !important;
@@ -14956,7 +14968,7 @@ pre {
  display: block;
  padding: 8.5px;
  margin: 0 0 9px;
- font-size: 9.0pt;
+ font-size: 12.0pt;
  line-height: 1.42857143;
  color: #b5c2d9;
  background-color: #262c36;
@@ -14976,7 +14988,7 @@ div.rendered_html {
 }
 div.rendered_html pre {
  font-family: monospace, monospace;
- font-size: 10.0pt !important;
+ font-size: 11pt !important;
  line-height: 170% !important;
  color: #abb7ce !important;
  background: #262c36;
@@ -14992,7 +15004,7 @@ div.rendered_html pre {
 div.text_cell_render pre,
 div.text_cell_render code {
  font-family: monospace, monospace;
- font-size: 10.0pt !important;
+ font-size: 11pt !important;
  line-height: 170% !important;
  color: #abb7ce;
  background: #1d1e23;
@@ -15018,7 +15030,7 @@ div.text_cell_render h4,
 div.rendered_html h4,
 div.text_cell_render h5,
 div.rendered_html h5 {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  margin: 0.4em .2em .3em .2em !important;
 }
 .rendered_html h1:first-child,
@@ -15102,11 +15114,11 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
  border: none;
 }
 .rendered_html td {
- font-family: sans-serif !important;
+ font-family: "PT Sans", sans-serif !important;
  font-size: 9.3pt;
 }
 .rendered_html table {
- font-family: sans-serif !important;
+ font-family: "PT Sans", sans-serif !important;
  margin-left: 8px;
  margin-right: auto;
  border: none;
@@ -15116,7 +15128,7 @@ div#_vivaldi-spatnav-focus-indicator._vivaldi-spatnav-focus-indicator {
  table-layout: fixed;
 }
 .rendered_html thead {
- font-family: sans-serif !important;
+ font-family: "PT Sans", sans-serif !important;
  font-size: 10.3pt !important;
  background: #2e3642;
  color: #d4d8ec;
@@ -15144,8 +15156,8 @@ div.widget-area {
  color: #b1bed6;
 }
 div.widget-area a {
- font-family: sans-serif;
- font-size: 9.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 12.0pt;
  font-weight: normal;
  font-style: normal;
  color: #899ab8;
@@ -15153,8 +15165,8 @@ div.widget-area a {
 }
 div.widget-area a:hover,
 div.widget-area a:focus {
- font-family: sans-serif;
- font-size: 9.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 12.0pt;
  font-weight: normal;
  font-style: normal;
  color: #bbc2e0;
@@ -15225,7 +15237,7 @@ div.widget-label {
  margin-left: 12px;
 }
 .rendered_html :link {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 100%;
  color: #7aa05d;
  text-decoration: underline;
@@ -15237,7 +15249,7 @@ div.widget-label {
 }
 .rendered_html :visited:hover,
 .rendered_html :link:hover {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 100%;
  color: #64963e;
 }
@@ -15280,7 +15292,7 @@ div#nbextensions-configurator-container.container,
  margin-left: auto;
 }
 div.nbext-selector > nav > .nav > li > a {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 10.5pt;
  padding: 2px 5px;
 }
@@ -15306,7 +15318,7 @@ div.nbext-selector > nav > .nav > li.active:hover {
  -webkit-font-smoothing: subpixel-antialiased !important;
 }
 div.nbext-readme > .nbext-readme-contents > .rendered_html {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 11.5pt;
  line-height: 145%;
  padding: 1em 1em;
@@ -15554,7 +15566,7 @@ div.collapsible_headings_toggle .fa-caret-right:before {
 #navigate_menu a,
 .toc {
  color: #899ab8 !important;
- font-size: 10.0pt !important;
+ font-size: 11pt !important;
 }
 #toc li > span:hover {
  background-color: #313643 !important;
@@ -15563,15 +15575,15 @@ div.collapsible_headings_toggle .fa-caret-right:before {
 #navigate_menu a:hover,
 .toc {
  color: #d8dcee !important;
- font-size: 10.0pt !important;
+ font-size: 11pt !important;
 }
 #toc-wrapper .toc-item-num {
  color: #7aa05d !important;
- font-size: 10.0pt !important;
+ font-size: 11pt !important;
 }
 input.raw_input {
  font-family: monospace, monospace;
- font-size: 10.0pt !important;
+ font-size: 11pt !important;
  color: #b5c2d9;
  background-color: #262c36;
  border-color: #242a33;
@@ -15605,7 +15617,7 @@ video {
  z-index: 1;
 }
 .typeahead-field input {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  color: #b5c2d9;
  border: none;
  font-size: 28pt;
@@ -15623,7 +15635,7 @@ body > div.modal.cmd-palette.typeahead-field {
  background-color: #2b3850;
 }
 .typeahead-container button {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-size: 28pt;
  background-color: #2e3642;
  border: none;
@@ -15658,8 +15670,8 @@ body > div.modal.cmd-palette.typeahead-field {
 }
 .typeahead-dropdown,
 .typeahead-list {
- font-family: sans-serif;
- font-size: 10.0pt;
+ font-family: "PT Sans", sans-serif;
+ font-size: 13pt;
  color: #899ab8;
  background-color: #202937;
  border: none;
@@ -15807,7 +15819,7 @@ div#short-key-bindings-intro.well,
 }
 .terminal-app .terminal {
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 11pt;
  line-height: 170%;
  color: #b5c2d9;
  background: #2c303c;
@@ -15923,7 +15935,7 @@ div#pager .ui-resizable-handle {
 div.CodeMirror,
 div.CodeMirror pre {
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 11pt;
  line-height: 170%;
  color: #b5c2d9;
 }
@@ -15985,7 +15997,7 @@ div.js-error {
 }
 .ipython_tooltip {
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 11pt;
  line-height: 170%;
  border: 2px solid #21262c;
  background: #323a44;
@@ -15999,7 +16011,7 @@ div.js-error {
 }
 .ipython_tooltip .tooltiptext pre {
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 11pt;
  line-height: 170%;
  background: #323a44;
  background-color: #323a44;
@@ -16021,7 +16033,7 @@ div.tooltiptext.bigtooltip {
 }
 .cm-s-ipython.CodeMirror {
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 11pt;
  background: #2c303c;
  color: #b5c2d9;
  border-radius: 2px;
@@ -16159,7 +16171,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
  color: #61afef;
 }
 div.cell.text_cell .cm-s-default .cm-header {
- font-family: sans-serif;
+ font-family: "PT Sans", sans-serif;
  font-weight: normal;
  color: #7aa05d !important;
  margin-top: 0.3em !important;
@@ -16246,7 +16258,7 @@ body :focus .MathJax {
  margin-left: 2px;
  overflow: auto;
  font-family: monospace, monospace;
- font-size: 10.0pt;
+ font-size: 11pt;
  color: #b5c2d9;
  width: auto;
 }
@@ -16592,25 +16604,25 @@ brandonkang@gatech.edu</p>
 <p>In this proof, I will show that the least squares estimate is equivalent to a <em>maximum likelihood estimator</em> when $\epsilon_i \sim N(0, \sigma^2) $. Recall that MLE is a method to estimate the parameters of a distribution by maximizing some likelihood function. Think of this intuitively as finding parameters that will maximize the probability of the model with some parameters generating the data that was actually observed. Recall that $y_i=\beta x_i+\epsilon_i$ for a no-intercept model. I'm doing a no-intercept model here to simplify computation without an added term. Note that the <em>only</em> source of randomness here is from $\epsilon_i$, so we can rewrite this as $\epsilon_i=y_i-\beta x_i$. We can then write our likelihood function, which is the pdf for $\epsilon_i$. Note that this is just the pdf of the Gaussian distribution.</p>
 $$
 \begin{align}
-f(x_i|\beta,\sigma^2)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(y_i-\beta x_i)^2}{2\sigma^2}\right)
+f(\epsilon_i|y_i, x_i, \beta,\sigma^2)=\frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(y_i-\beta x_i)^2}{2\sigma^2}\right)
 \end{align}
 $$<p>The above formulation is the pdf for a <em>single</em> observation, but we need to extend this to $N$ observations. Let $X$ be a column vector with $n$ rows/observations.
 $$
 \begin{align}
-l(X|\beta,\sigma^2) &amp;= \prod_{i=1}^N \frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(y_i-\beta x_i)^2}{2\sigma^2}\right) \\
+l(\epsilon|X,\beta,\sigma^2) &amp;= \prod_{i=1}^N \frac{1}{\sigma\sqrt{2\pi}}\exp\left(\frac{-(y_i-\beta x_i)^2}{2\sigma^2}\right) \\
 &amp;=\left(\frac{1}{\sigma\sqrt{2\pi}}\right)^N  \prod_{i=1}^N\exp\left(\frac{-(y_i-\beta x_i)^2}{2\sigma^2}\right)
 \end{align}
 $$</p>
 <p>We will now take the log-likelihood. Note that we can take the log since the log function is monotonically increasing, so we will have the same conclusions with log-likelihood as doing normal likelihood. Also, it simplifies the computation significantly.</p>
 $$
 \begin{align}
-\log l(X|\beta,\sigma^2) &amp;= N\log\left(\frac{1}{\sigma\sqrt{2\pi}}\right) + \sum_{i=1}^N\log\left(\exp\left(\frac{-(y_i-\beta x_i)^2}{2\sigma^2}\right) \right) \\
+\log l(\epsilon|X,\beta,\sigma^2) &amp;= N\log\left(\frac{1}{\sigma\sqrt{2\pi}}\right) + \sum_{i=1}^N\log\left(\exp\left(\frac{-(y_i-\beta x_i)^2}{2\sigma^2}\right) \right) \\
 &amp;= N\log\left(\frac{1}{\sigma\sqrt{2\pi}}\right) - \frac{1}{2\sigma^2}\sum_{i=1}^N (y_i-\beta x_i)^2
 \end{align}
 $$<p>Now let's complete the MLE formulation.
 $$
 \begin{align}
-&amp; \text{argmax}_\beta \; \log l(X|\beta,\sigma^2)  \\
+&amp; \text{argmax}_\beta \; \log l(\epsilon|X,\beta,\sigma^2)  \\
 &amp;= \text{argmax}_\beta \; N\log\left(\frac{1}{\sigma\sqrt{2\pi}}\right) - \frac{1}{2\sigma^2}\sum_{i=1}^N (y_i-\beta x_i)^2 \\
 &amp;= \text{argmax}_\beta \; -\sum_{i=1}^N (y_i-\beta x_i)^2 \\
 &amp;= \text{argmin}_\beta  \;  \sum_{i=1}^N (y_i-\beta x_i)^2
@@ -16619,7 +16631,7 @@ $$</p>
 <p>This tells us that in order to find the parameters that <em>maximize the log likelihood</em>, we have to find parameters that <em>minimize the sum of squared errors</em> (since there is a negative sign in front of the summation), which was derived in class! Note that the first term as well as the constant factor in the second term, $\frac{1}{2\sigma^2}$ in the log likelihood function does not depend on our parameters, so we can ignore this term when taking the argmax. We can now derive for our estimator, $\hat{\beta_{MLE}}$ by differentiating.</p>
 $$
 \begin{align}
-\frac{\partial \log l(X|\beta,\sigma^2) }{\partial \beta} &amp;= 0 \\
+\frac{\partial \log l(\epsilon|X,\beta,\sigma^2) }{\partial \beta} &amp;= 0 \\
 \sum_{i=1}^N x_i(y_i-\beta x_i) &amp;= 0 \\
 \sum_{i=1}^N x_iy_i - \beta\sum_{i=1}^N x_i^2 &amp;= 0 \\
 \hat{\beta_{MLE}} = \frac{\sum_{i=1}^N x_iy_i}{\sum_{i=1}^N x_i^2}
